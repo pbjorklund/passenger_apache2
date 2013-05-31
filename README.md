@@ -50,6 +50,7 @@ Attributes
   usually), delete the attribute in a recipe with this line:
 
     node.set['passenger']['package'].delete('version')
+* `node['passenger']['ruby_bin']` - Ruby binary to use
 
 Recipes
 =======
