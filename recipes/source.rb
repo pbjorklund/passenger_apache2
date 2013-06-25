@@ -47,7 +47,12 @@ gem_package "passenger" do
   version node['passenger']['version']
 end
 
-execute "passenger_module" do
-  command 'passenger-install-apache2-module --auto'
+rbenv_script "passenger_module" do
+  code %{ passenger-install-apache2-module --auto }
   creates node['passenger']['module_path']
 end
+
+#execute "passenger_module" do
+#  command 'passenger-install-apache2-module --auto'
+#  creates node['passenger']['module_path']
+#end
